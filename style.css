@@ -1,0 +1,405 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #003d82;
+  --accent-color: #0066cc;
+  --text-color: #333;
+  --light-text: #666;
+  --light-bg: #f5f5f5;
+  --white: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--light-bg);
+  color: var(--text-color);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* CV Container */
+.cv-container {
+  display: flex;
+  max-width: 1200px;
+  margin: 40px auto;
+  background: white;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  min-height: 100vh;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+  flex: 0 0 35%;
+  background: linear-gradient(135deg, var(--primary-color) 0%, #002d5c 100%);
+  padding: 40px 30px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Profile Photo */
+.profile-photo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.profile-photo img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 4px solid white;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Header Info */
+.header-info {
+  text-align: center;
+  margin-bottom: 30px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 20px;
+}
+
+.header-info h1 {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+.header-info .date {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* Sections */
+.section {
+  margin-bottom: 30px;
+}
+
+.section h2 {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 8px;
+}
+
+/* Contact Items */
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.contact-item .icon {
+  margin-right: 12px;
+  font-size: 16px;
+  min-width: 20px;
+}
+
+.contact-item a {
+  color: white;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.contact-item a:hover {
+  opacity: 0.8;
+}
+
+.contact-item p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Information List */
+.section ul {
+  list-style: none;
+}
+
+.section ul li {
+  padding-left: 20px;
+  position: relative;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.section ul li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+/* Content Area */
+.content {
+  flex: 1;
+  padding: 40px 50px;
+  overflow-y: auto;
+}
+
+.main-section {
+  margin-bottom: 35px;
+  border-bottom: 2px solid var(--light-bg);
+  padding-bottom: 25px;
+}
+
+.main-section:last-child {
+  border-bottom: none;
+}
+
+/* Section Title */
+.section-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary-color);
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  border-bottom: 3px solid var(--accent-color);
+  padding-bottom: 10px;
+}
+
+/* Experience Items */
+.experience-item,
+.education-item {
+  margin-bottom: 20px;
+}
+
+.company-name,
+.degree {
+  font-weight: 700;
+  color: var(--primary-color);
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.position {
+  font-weight: 600;
+  color: var(--accent-color);
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.description {
+  color: var(--light-text);
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Skills */
+.skill-item {
+  margin-bottom: 18px;
+}
+
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.skill-name {
+  font-weight: 600;
+  color: var(--text-color);
+  font-size: 14px;
+}
+
+.skill-level {
+  color: var(--accent-color);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.progress-bar {
+  height: 8px;
+  background-color: var(--light-bg);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-color) 0%, var(--primary-color) 100%);
+  border-radius: 4px;
+  transition: width 0.6s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .cv-container {
+    max-width: 100%;
+    margin: 20px;
+  }
+
+  .sidebar {
+    flex: 0 0 40%;
+  }
+
+  .content {
+    padding: 30px 40px;
+  }
+
+  .profile-photo img {
+    width: 130px;
+    height: 130px;
+  }
+
+  .header-info h1 {
+    font-size: 26px;
+  }
+
+  .section-title {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cv-container {
+    flex-direction: column;
+    min-height: auto;
+    margin: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .sidebar {
+    flex: 1;
+    padding: 20px;
+    order: -1; /* Sidebar first on mobile */
+  }
+
+  .content {
+    flex: 1;
+    padding: 20px;
+  }
+
+  .profile-photo img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .header-info h1 {
+    font-size: 20px;
+  }
+
+  .section-title {
+    font-size: 16px;
+  }
+
+  .contact-item {
+    font-size: 13px;
+  }
+
+  .section ul li {
+    font-size: 13px;
+  }
+
+  .company-name,
+  .degree {
+    font-size: 14px;
+  }
+
+  .position {
+    font-size: 13px;
+  }
+
+  .description {
+    font-size: 13px;
+  }
+
+  .skill-name {
+    font-size: 13px;
+  }
+
+  .skill-level {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cv-container {
+    margin: 5px;
+  }
+
+  .sidebar {
+    padding: 15px;
+  }
+
+  .content {
+    padding: 15px;
+  }
+
+  .profile-photo img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .header-info h1 {
+    font-size: 18px;
+  }
+
+  .section h2 {
+    font-size: 14px;
+  }
+
+  .section-title {
+    font-size: 14px;
+  }
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.vanilla:hover {
+  filter: drop-shadow(0 0 2em #f7df1eaa);
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
